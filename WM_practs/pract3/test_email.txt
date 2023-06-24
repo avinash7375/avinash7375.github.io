@@ -1,0 +1,12 @@
+Subject: Urgent! Your account needs attention.
+
+Dear valued customer,
+
+We regret to inform you that there has been suspicious activity on your account. To prevent unauthorized access and protect your account, we ask that you please verify your identity by clicking on the link below and entering your login credentials.
+
+https://www.example.com/verify-account
+
+Thank you for your cooperation.
+
+Sincerely,
+The Example Team
