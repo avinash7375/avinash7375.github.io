@@ -1,16 +1,62 @@
-        body {
-            font-family: Helvetica, Arial, sans-serif;
-            text-align: center;
-            padding: 20px;
-            background-color: #000000;
-            color: aliceblue;
-        }
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    background-color: #000000;
+    color: aliceblue;
+    }
 
-        h1 {
-            color: #3366cc;
-        }
+h1 {
+    color: rgb(95, 180, 255);
+    }
+p {
+    text-align: center;
+    color: rgb(170, 170, 170);
+    }
+.blog {
+    background-color: rgb(77, 77, 77);
+    color: rgb(0, 136, 255);
+    padding: 10px;
+    border: 5px solid green;
+    align-items: center;
+    text-align: center;
+    vertical-align: middle;
+    }
 
-        a {
-            text-align: center;
-            color: red;
-        }
+.blog1 {
+    color:rgb(0, 0, 0);
+    padding: 10px;
+    border: 5px solid green;
+    background-color: rgb(90, 90, 90);
+    float:inline-start;
+    height: 20px;
+    width: 50%;
+    text-align: center;
+}
+
+.blog2 {
+    color:rgb(0, 0, 0);
+    padding: 10px;
+    border: 5px solid green;
+    background-color: rgb(90, 90, 90);
+    float:inline-start;
+    height: 20px;
+    width: 50%;
+    text-align: center;
+}
+
+.blog3 {
+    color:rgb(0, 0, 0);
+    padding: 10px;
+    border: 5px solid green;
+    background-color: rgb(90, 90, 90);
+    height: 20px;
+    width: 50%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+hr {
+    border: 1px solid green;
+
+}
