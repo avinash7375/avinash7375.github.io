@@ -1,68 +1,79 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>AviiLabs</title>
-<style>
-  body{
-    background-color: rgb(0, 0, 0);
-    align-items:center
-  }
-
-  .blog1 {
-    height: max-content;
-    width:fit-content;
-    margin: 30px;
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    /* border: 1px solid rgb(255, 255, 255); */
-    /* border-radius: 10px; */
-    color: rgb(254, 160, 28);
-  }
-
-  .type {
-    margin: 20px;
-    padding: 5px;
-    height:max-content;
-    width:fit-content;
-    /* background-color: rgba(255, 217, 167, 0.613); */
-    /* color: black; */
-    border-radius: 20px;
-    
-  }
-  li {
-    color:rgb(112, 53, 5);
-    padding: 5px;
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Science Monthly Course | Red King Enterprises</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-  <center>
-    <h1 style="color: rgb(112, 53, 5);">AviiLabs - Content on Compilers, Programming languages and System Security</h1>
-  </center><hr>
-<center>
-  <p>This blog is all about Computer Architecture - be it Computer Hardware, Computer Software, Network Architecture, Security Architecture <br>It's like building something from scratch. <br>I will also be going through some more things and will be done and shown on the blogs below.</p>
-</center>
-  <div class="about">
-    <h1 style="font-size: large;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
-    </h1>
-  </div>
-  <div class="type">
-  <center>
-    <div class="blog1">
-      <!-- <embed src="/README.md"> -->
-        <ul>
-          <li><a href="blog1.html">
-            <text>Something about Compilers I need you to know </text>
-          </a></li>
-          
-        </ul>  
-    </div></center>
+<body class="bg-gradient-to-br from-blue-50 to-teal-100 min-h-screen font-sans text-gray-800">
 
-    </div> <!-- Ended type here-->
-    <div class="right">
-      
+  <!-- Header Section -->
+  <header class="bg-gradient-to-r from-blue-900 to-teal-600 text-white py-6 shadow-lg">
+    <div class="max-w-6xl mx-auto text-center">
+      <h1 class="text-4xl font-bold mb-2">Data Science Monthly Course</h1>
+      <p class="text-lg italic">Offered by <span class="text-yellow-300 font-semibold">Red King Enterprises</span></p>
     </div>
-</div>
-</body>
+  </header>
 
+  <!-- Hero Image -->
+  <section class="max-w-5xl mx-auto mt-8">
+    <img src="course-data-analytics-main.png" alt="Data Science Course Poster" class="rounded-2xl shadow-xl w-full">
+  </section>
+
+  <!-- Course Description -->
+  <section class="max-w-5xl mx-auto mt-12 bg-white rounded-xl shadow-md p-8">
+    <h2 class="text-2xl font-bold text-blue-800 mb-4">About the Course</h2>
+    <p class="leading-relaxed text-gray-700">
+      The <strong>Data Science Monthly Course</strong> is designed to teach you the complete workflow of <strong>Data Analytics</strong>, from data cleaning and transformation to applying <strong>Machine Learning</strong> algorithms. The course emphasizes practical skills using modern tools and frameworks used in industry.
+    </p>
+
+    <div class="grid md:grid-cols-2 gap-6 mt-8">
+      <div>
+        <h3 class="text-xl font-semibold text-teal-700 mb-2">Data Analysis and Cleaning</h3>
+        <ul class="list-disc ml-5 space-y-1 text-gray-700">
+          <li>Python, NumPy, Pandas</li>
+          <li>Matplotlib, Seaborn, SciPy</li>
+          <li>Excel, Power BI, Tableau</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-semibold text-teal-700 mb-2">Machine Learning</h3>
+        <ul class="list-disc ml-5 space-y-1 text-gray-700">
+          <li>Fundamentals of Machine Learning</li>
+          <li>Machine Learning with Python (Scikit-Learn)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Course Details -->
+  <section class="max-w-5xl mx-auto mt-10 bg-gradient-to-r from-blue-100 to-teal-100 rounded-xl shadow p-8 text-center">
+    <h2 class="text-2xl font-bold text-blue-800 mb-3">Course Details</h2>
+    <p class="text-gray-700 mb-1">📅 <strong>Duration:</strong> 1 Month (Intensive Learning)</p>
+    <p class="text-gray-700 mb-1">💰 <strong>Fees:</strong> Rs. 40,000</p>
+    <p class="text-gray-700 mb-1">📜 <strong>Certificate:</strong> Included upon completion</p>
+    <p class="text-gray-700">🎯 <strong>Seats:</strong> Limited Enrollment</p>
+  </section>
+
+  <!-- Contact and QR -->
+  <section class="max-w-5xl mx-auto mt-10 flex flex-col md:flex-row items-center justify-between bg-white rounded-xl shadow-md p-8">
+    <div class="mb-6 md:mb-0">
+      <h3 class="text-xl font-semibold text-teal-700 mb-2">Contact Information</h3>
+      <p class="text-gray-700 mb-2">Scan the QR Code to learn more or register:</p>
+      <p class="text-gray-600">Email: <a href="mailto:info@redkingenterprises.com" class="text-blue-700 underline">info@redkingenterprises.com</a></p>
+      <p class="text-gray-600">Phone: ########## / ##########</p>
+    </div>
+    <div>
+      <img src="course-data-analytics-main.png" alt="QR Code Placeholder" class="w-40 h-40 border-2 border-gray-300 rounded-lg shadow-md">
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gradient-to-r from-blue-900 to-teal-600 text-white text-center py-4 mt-12">
+    <p class="text-sm">© 2025 Red King Enterprises | All Rights Reserved</p>
+  </footer>
+
+</body>
 </html>
