@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Course Registration | Avinash</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f1f4f8;
+        margin: 0;
+    }
+    .container {
+        width: 90%;
+        max-width: 720px;
+        margin: 30px auto;
+        background: #fff;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+    }
+    h2 { text-align: center; margin-bottom: 25px; }
+    label { font-weight: bold; display: block; margin-bottom: 5px; }
+    input, select {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 18px;
+        border: 1px solid #d0d0d0;
+        border-radius: 6px;
+        font-size: 16px;
+    }
+    .fee-box {
+        background: #e9f3ff;
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        border-left: 4px solid #0077ff;
+    }
+    button {
+        width: 100%;
+        padding: 15px;
+        background: #0077ff;
+        border: none;
+        color: white;
+        font-size: 18px;
+        cursor: pointer;
+        border-radius: 8px;
+        font-weight: bold;
+    }
+    button:hover { background: #005fcc; }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Course Registration</h2>
+
+    <div class="fee-box">
+        <label>Main Course Fee (₹ 5000)</label>
+        <input type="number" id="mainFee" placeholder="Enter course fee mentoined above" />
+
+        <label>Advance Payment (50%)</label>
+        <input type="text" id="halfFee" readonly />
+    </div>
+
+    <form id="regForm">
+        
+        <label>Full Name</label>
+        <input type="text" id="fullName" required />
+
+        <label>Email Address</label>
+        <input type="email" id="email" required />
+
+        <label>Phone Number</label>
+        <input type="text" id="phone" required />
+
+        <label>Select Course</label>
+        <select id="course" required>
+            <option value="">-- Select Course --</option>
+            <option>Microarchitecture Security</option>
+            <option>Computer Architecture Fundamentals</option>
+            <option>Data Analytics Course</option>
+            <option>AI for System Design</option>
+        </select>
+
+        <button type="submit">Pay 50% & Register</button>
+    </form>
+</div>
+
+
+<!-- EmailJS Library -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+
+<script>
+    /* 1) Initialize EmailJS */
+    (function() {
+        emailjs.init("YOUR_PUBLIC_KEY");  // TODO: Replace
+    })();
+
+    /* 2) Auto Calculate 50% Advance */
+    const mainFee = document.getElementById("mainFee");
+    const halfFee = document.getElementById("halfFee");
+
+    mainFee.addEventListener("input", () => {
+        halfFee.value = mainFee.value ? (mainFee.value * 0.5).toFixed(2) : "";
+    });
+
+    /* 3) Payment link */
+    const PAYMENT_LINK = "https://rzp.io/l/AvinashCourse50";  // TODO: Replace
+
+    /* 4) Form Submit */
+    document.getElementById("regForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const userData = {
+            to_name: fullName.value,
+            to_email: email.value,
+            course_name: course.value,
+            advance_fee: halfFee.value
+        };
+
+        /* 5) Send Email */
+        emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", userData)  // TODO: Replace
+            .then(function() {
+                alert("Email confirmation sent! Redirecting to secure payment...");
+                window.location.href = PAYMENT_LINK;
+            }, function(error) {
+                alert("Email could not be sent, but continuing to payment.");
+                window.location.href = PAYMENT_LINK;
+            });
+    });
+</script>
+
+</body>
+</html>
