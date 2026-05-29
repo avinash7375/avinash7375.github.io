@@ -1,288 +1,501 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Red King Labs | Avinash Kauran</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RedKing Tutors</title>
 
-   <style>
-    body {
-        background-color: #ffffff;
-        color: #534500; /* foreground text */
-        font-family: "Segoe UI", Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        line-height: 1.6;
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
     }
 
-    .container {
-        width: 85%;
-        max-width: 1100px;
-        margin: auto;
-        padding: 40px 0;
+    body{
+      font-family:'Inter',sans-serif;
+      background:#0b0f19;
+      color:#ffffff;
+      line-height:1.6;
     }
 
-    header {
-        text-align: center;
-        margin-bottom: 40px;
+    a{
+      text-decoration:none;
+      color:inherit;
     }
 
-    header h1 {
-        font-size: 2.4rem;
-        letter-spacing: 1px;
-        margin-bottom: 10px;
-        color: #534500;
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
     }
 
-    header p {
-        font-size: 1.1rem;
-        color: #6a5d1f; /* lighter variation */
+    /* NAVBAR */
+
+    nav{
+      position:fixed;
+      width:100%;
+      top:0;
+      background:rgba(10,10,20,0.95);
+      backdrop-filter:blur(10px);
+      z-index:1000;
+      border-bottom:1px solid rgba(255,255,255,0.08);
     }
 
-    hr {
-        border: none;
-        border-top: 1px solid #cfcfcf;
-        margin: 30px 0;
+    .nav-container{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:18px 0;
     }
 
-    h2 {
-        font-size: 1.8rem;
-        margin-bottom: 10px;
-        color: #534500;
+    .logo{
+      font-size:1.5rem;
+      font-weight:700;
+      color:#4ea1ff;
     }
 
-    h3 {
-        font-weight: normal;
-        font-style: italic;
-        color: #6a5d1f;
+    .nav-links{
+      display:flex;
+      gap:30px;
     }
 
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 20px;
-        background-color: #fafafa;
+    .nav-links a{
+      color:#d0d7e2;
+      transition:0.3s;
     }
 
-    th, td {
-        border: 1px solid #d4d4d4;
-        padding: 14px;
-        text-align: left;
-        vertical-align: top;
+    .nav-links a:hover{
+      color:#4ea1ff;
     }
 
-    th {
-        background-color: #f0f0f0;
-        color: #534500;
-        font-size: 1rem;
+    /* HERO */
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      background:
+      linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
+      url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1600&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+      padding-top:80px;
     }
 
-    td {
-        color: #534500;
-        font-size: 0.95rem;
+    .hero-content{
+      max-width:700px;
     }
 
-    table tr:hover {
-        background-color: #f5f5f5;
+    .hero h1{
+      font-size:4rem;
+      line-height:1.1;
+      margin-bottom:20px;
     }
 
-    .note {
-        margin-top: 15px;
-        font-size: 0.95rem;
-        color: #6a5d1f;
+    .hero h1 span{
+      color:#4ea1ff;
     }
 
-    footer {
-        margin-top: 50px;
-        text-align: center;
-        font-size: 0.85rem;
-        color: #7a6f2f;
+    .hero p{
+      font-size:1.2rem;
+      color:#c8d0da;
+      margin-bottom:35px;
     }
-</style>
 
+    .btn{
+      display:inline-block;
+      padding:14px 28px;
+      border-radius:10px;
+      background:#4ea1ff;
+      color:white;
+      font-weight:600;
+      transition:0.3s;
+      margin-right:15px;
+    }
 
+    .btn:hover{
+      background:#2d8cff;
+      transform:translateY(-2px);
+    }
+
+    .btn-outline{
+      background:transparent;
+      border:1px solid #4ea1ff;
+    }
+
+    /* SECTION */
+
+    section{
+      padding:100px 0;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:60px;
+    }
+
+    .section-title h2{
+      font-size:2.5rem;
+      margin-bottom:10px;
+    }
+
+    .section-title p{
+      color:#a7b0bc;
+    }
+
+    /* COURSES */
+
+    .courses-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:30px;
+    }
+
+    .course-card{
+      background:#131b2d;
+      padding:30px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,0.06);
+      transition:0.3s;
+    }
+
+    .course-card:hover{
+      transform:translateY(-8px);
+      border-color:#4ea1ff;
+    }
+
+    .course-card h3{
+      margin-bottom:15px;
+      color:#4ea1ff;
+    }
+
+    .course-card p{
+      color:#c1c7d0;
+    }
+
+    /* ABOUT */
+
+    .about{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:50px;
+      align-items:center;
+    }
+
+    .about img{
+      width:100%;
+      border-radius:20px;
+    }
+
+    .about-text h2{
+      font-size:2.5rem;
+      margin-bottom:20px;
+    }
+
+    .about-text p{
+      color:#c1c7d0;
+      margin-bottom:20px;
+    }
+
+    /* STATS */
+
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:25px;
+      margin-top:50px;
+    }
+
+    .stat{
+      background:#131b2d;
+      padding:30px;
+      text-align:center;
+      border-radius:16px;
+    }
+
+    .stat h3{
+      color:#4ea1ff;
+      font-size:2rem;
+    }
+
+    /* CONTACT */
+
+    .contact-form{
+      max-width:700px;
+      margin:auto;
+      background:#131b2d;
+      padding:40px;
+      border-radius:20px;
+    }
+
+    .form-group{
+      margin-bottom:20px;
+    }
+
+    input,
+    textarea{
+      width:100%;
+      padding:16px;
+      border:none;
+      border-radius:10px;
+      background:#0f1524;
+      color:white;
+      font-size:1rem;
+    }
+
+    textarea{
+      min-height:140px;
+      resize:vertical;
+    }
+
+    button{
+      border:none;
+      cursor:pointer;
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:#05070d;
+      text-align:center;
+      padding:30px 0;
+      color:#8892a0;
+      border-top:1px solid rgba(255,255,255,0.05);
+    }
+
+    /* MOBILE */
+
+    @media(max-width:900px){
+
+      .hero h1{
+        font-size:3rem;
+      }
+
+      .about{
+        grid-template-columns:1fr;
+      }
+
+      .nav-links{
+        display:none;
+      }
+    }
+
+  </style>
 </head>
 
 <body>
+
+  <!-- NAVBAR -->
+
+  <nav>
+    <div class="container nav-container">
+      <div class="logo">Avinash Kauran</div>
+
+      <div class="nav-links">
+        <a href="#courses">Courses</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+
+        <h1>
+          Advanced <span>Computer Science</span> Tutoring
+        </h1>
+
+        <p>
+          Learn Systems Programming, Cybersecurity,
+          Operating Systems, AI, Reverse Engineering,
+          and Research-Oriented Computer Science from an advanced mentor.
+        </p>
+
+        <a href="#contact" class="btn">Book a Session</a>
+        <a href="#courses" class="btn btn-outline">Explore Courses</a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- COURSES -->
+
+  <section id="courses">
     <div class="container">
 
-        <header>
-            <h1>Red King Labs</h1>
-            <p>Compilers (Security and Optimizations), Computer Architecture (Security and Performance) & Programming Languages</p>
-        </header>
+      <div class="section-title">
+        <h2>Courses & Mentorship</h2>
+        <p>High-performance systems, security, AI, and advanced CS topics.</p>
+      </div>
 
-        <hr>
+      <div class="courses-grid">
 
-        <section>
-            <h2>Vision</h2>
-            <h3>
-                “Our lab focuses on performance, security, and programmability across
-                the hardware–software stack, spanning microarchitecture, compiler
-                optimizations, runtime systems, and programming languages.”
-            </h3>
-        </section>
+        <div class="course-card">
+          <h3>Operating Systems</h3>
+          <p>
+            Learn scheduling, memory management,
+            concurrency, kernel concepts, and Linux internals.
+          </p>
+        </div>
 
-        <hr>
+        <div class="course-card">
+          <h3>Cybersecurity</h3>
+          <p>
+            Reverse engineering, malware analysis,
+            exploit development, and system security.
+          </p>
+        </div>
 
-        <section>
-            <table>
-                <tr>
-                    <th>Computer Architecture</th>
-                    <th>Compilers</th>
-                    <th>Programming Languages</th>
-                    <th>Cross-Layer Research</th>
-                </tr>
-                <tr>
-                    <td>Speculative Execution and Side Channels</td>
-                    <td>Compiler Support for Security (Spectre & Meltdown)</td>
-                    <td>DSLs for Architecture-Aware Programming</td>
-                    <td>Compiler-Assisted Microarchitectural Security</td>
-                </tr>
-                <tr>
-                    <td>Cache, Branch Prediction, Memory Hierarchy</td>
-                    <td>Hardware-Aware Compiler Passes</td>
-                    <td>Safe Systems Programming (Rust, Zig, MLIR-based IRs)</td>
-                    <td>ISA Extensions with Compiler Support</td>
-                </tr>
-            </table>
-        </section>
+        <div class="course-card">
+          <h3>Rust Systems Programming</h3>
+          <p>
+            Build high-performance low-level applications
+            using Rust for system software and tooling.
+          </p>
+        </div>
 
-        <hr>
+        <div class="course-card">
+          <h3>Computer Architecture</h3>
+          <p>
+            Cache systems, pipelines, memory hierarchy,
+            microarchitecture, and performance optimization.
+          </p>
+        </div>
 
-        <section>
-            <h2>Top Conferences to Focus On</h2>
-            <p class="note">
-                Tier-1 conferences for publishing high-impact research in architecture,
-                compilers, programming languages, and security.
-            </p>
+        <div class="course-card">
+          <h3>AI & GenAI Systems</h3>
+          <p>
+            Learn practical AI systems,
+            LLM architecture, and deployment pipelines.
+          </p>
+        </div>
 
-            <table>
-                <tr>
-                    <th>Architecture</th>
-                    <th>Compilers & Programming Languages</th>
-                    <th>Security / Cross-Layer</th>
-                </tr>
-                <tr>
-                    <td>HPCA</td>
-                    <td>PLDI</td>
-                    <td>USENIX Security</td>
-                </tr>
-                <tr>
-                    <td>ASPLOS</td>
-                    <td>POPL</td>
-                    <td>CCS</td>
-                </tr>
-            </table>
+        <div class="course-card">
+          <h3>Research Mentorship</h3>
+          <p>
+            Guidance for papers,
+            literature reviews, and advanced research projects.
+          </p>
+        </div>
 
-            <p class="note">
-                These venues represent the top-tier publication targets for
-                Computer Architecture, Compilers, Programming Languages, and Systems Security.
-            </p>
-        </section>
-<hr>
-
-<section>
-    <h2>Hiring: Research & Development Engineers</h2>
-
-    <p class="note">
-        Red King Labs is looking for highly motivated engineers and researchers to work on
-        cutting-edge tools and architectures across the hardware–software stack.
-        This is a hands-on R&amp;D role focused on building real systems and publishing
-        high-impact research.
-    </p>
-
-    <table>
-        <tr>
-            <th>Role</th>
-            <th>Focus Areas</th>
-            <th>Expected Skills</th>
-        </tr>
-
-        <tr>
-            <td><b>Research Engineer – Computer Architecture</b></td>
-            <td>
-                Microarchitecture modeling, speculative execution analysis,
-                cache &amp; memory hierarchy research, performance benchmarking
-            </td>
-            <td>
-                C/C++, Linux internals, x86/RISC-V, simulators (gem5, QEMU),
-                performance counters, microbenchmarks
-            </td>
-        </tr>
-
-        <tr>
-            <td><b>Research Engineer – Compilers</b></td>
-            <td>
-                Compiler optimizations, security-aware compilation,
-                hardware-aware code generation
-            </td>
-            <td>
-                LLVM/MLIR, GCC internals, Rust/Zig, compiler passes,
-                IR transformations
-            </td>
-        </tr>
-
-        <tr>
-            <td><b>Systems &amp; Tooling Engineer</b></td>
-            <td>
-                Performance analysis tools, security instrumentation,
-                low-level debugging and profiling
-            </td>
-            <td>
-                Linux kernel/user-space tooling, eBPF, perf,
-                system tracing, C/Rust
-            </td>
-        </tr>
-
-        <tr>
-            <td><b>Cross-Layer Security Engineer</b></td>
-            <td>
-                Microarchitectural side channels, compiler-assisted mitigations,
-                ISA–software co-design
-            </td>
-            <td>
-                Side-channel attacks, Spectre/Meltdown class issues,
-                compiler &amp; hardware interaction, formal reasoning (basic)
-            </td>
-        </tr>
-    </table>
-
-    <br>
-
-    <h3>Who Should Apply</h3>
-    <ul class="note">
-        <li>Strong systems engineers with research mindset</li>
-        <li>Industry professionals interested in academic-quality research</li>
-        <li>Independent researchers and serious open-source contributors</li>
-        <li>Master’s / Bachelor’s graduates with proven low-level expertise</li>
-    </ul>
-
-    <h3>Who Should NOT Apply</h3>
-    <ul class="note">
-        <li>PhD holders</li>
-        <li>Post-doctoral researchers</li>
-        <li>Currently enrolled PhD candidates</li>
-    </ul>
-
-    <h3>What We Offer</h3>
-    <ul class="note">
-        <li>Deep involvement in real research problems</li>
-        <li>Authorship on research papers (conference / workshop level)</li>
-        <li>Open-source tool development</li>
-        <li>Strong mentorship in architecture &amp; compiler research</li>
-        <li>Flexible, research-driven work culture</li>
-    </ul>
-
-    <p class="note">
-        To apply, send a brief introduction along with links to your
-        GitHub, technical blogs, or past systems work.
-    </p>
-</section>
-
-        <footer>
-            © 2026 — Red King Labs | Avinash Kauran
-        </footer>
+      </div>
 
     </div>
+  </section>
+
+  <!-- ABOUT -->
+
+  <section id="about">
+    <div class="container">
+
+      <div class="about">
+
+        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop" alt="Mentor">
+
+        <div class="about-text">
+
+          <h2>About the Mentor</h2>
+
+          <p>
+            I specialize in advanced computer science education,
+            focusing on systems programming, cybersecurity,
+            operating systems, compilers, AI systems, and computer architecture.
+          </p>
+
+          <p>
+            My mentorship combines theoretical depth,
+            practical engineering, and research-focused learning
+            to help students become industry-ready and research-capable.
+          </p>
+
+          <a href="#contact" class="btn">
+            Start Learning
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="stats">
+
+        <div class="stat">
+          <h3>100+</h3>
+          <p>Students Mentored</p>
+        </div>
+
+        <div class="stat">
+          <h3>20+</h3>
+          <p>Advanced Topics</p>
+        </div>
+
+        <div class="stat">
+          <h3>1-on-1</h3>
+          <p>Personal Mentorship</p>
+        </div>
+
+        <div class="stat">
+          <h3>Research</h3>
+          <p>Focused Guidance</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Book a Session</h2>
+        <p>Get personalized mentoring and advanced CS tutoring.</p>
+      </div>
+
+      <form class="contact-form">
+
+        <div class="form-group">
+          <input type="text" placeholder="Your Name" required>
+        </div>
+
+        <div class="form-group">
+          <input type="email" placeholder="Your Email" required>
+        </div>
+
+        <div class="form-group">
+          <textarea placeholder="Tell me what you want to learn..."></textarea>
+        </div>
+
+        <button class="btn" type="submit">
+          Send Inquiry
+        </button>
+
+      </form>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    <div class="container">
+      <p>
+        © 2026 Avinash Kauran. All Rights Reserved.
+      </p>
+    </div>
+  </footer>
+
 </body>
 </html>
