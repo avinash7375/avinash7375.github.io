@@ -6,17 +6,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DSA Subject Notes</title>
     <style>
-.subject-fino {
-    background-color: antiquewhite;
-    color: chocolate;
-    width: 200px;
-    height: auto;
+.container {
+    display: flex;
+    gap: 30px;              /* Space between the two divs */
+    align-items: flex-start;
+    padding: 20px;
 }
+
+.subject-info {
+    background-color: rgba(255, 161, 37, 0.2);
+    color: rgb(0, 96, 121);
+    width: 450px;
+    min-height: 600px;
+    font-style: italic;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 2px solid rgb(255, 197, 197);
+    border-radius: 25px;
+    padding: 20px;
+}
+
+.new {
+    width: 350px;
+    min-height: 600px;      /* Same height as left card */
+    background-color: rgba(0, 114, 122, 0.2);
+    color: rgb(253, 155, 155);
+    border: 2px solid aliceblue;
+    border-radius: 25px;
+    padding: 20px;
+    font-style: italic;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
     </style>
 </head>
-<body>
-    <div class="subject-info">
-        <h3 style="font-style: italic; font-family: Arial, Helvetica, sans-serif;">Digital System Design</h3>
+<body style="background-color: rgb(0, 0, 0);">
+    <div class="container">
+        <div class="subject-info">
+            <h3><u>Digital System Design</u></h3>
+            <hr>
+            <p style="font-size: 20px; font-family: 'Times New Roman', Times, serif;">
+                Syllabus
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="fycs-dsd-syllabus.pdf" target="_self">Get Syllabus Here</a>
+            </p>
+            <hr>
+
+            <p style="font-size: 20px; font-family: 'Times New Roman', Times, serif;">
+                Concepts We Are Done With
+            </p>
+
+            <ul>
+                <li>Computer Abstractions and Technology</li>
+                <li>Number Systems</li>
+                <li>Boolean Algebra and Logic Gates</li>
+            </ul>
+            <hr>
+        </div>
+
+        <div class="new">
+            <p style="font-size: 20px; font-family: Arial, Helvetica, sans-serif;">
+                <u>Introduction to Digital System Design</u>
+            </p>
+            <p style="font-size: 20px; font-family: Arial, Helvetica, sans-serif; color: white;">
+<hr>Digital System Design is the process of designing electronic systems using digital logic.<hr>
+It operates on binary values, 0 and 1.<hr>
+Digital systems process, store, and transmit information efficiently.<hr>
+Logic gates are the basic building blocks of digital circuits.<hr>
+It includes both combinational and sequential circuits.<hr>
+Boolean algebra is used to analyze and simplify digital circuits.<hr>
+Hardware Description Languages (HDLs) like Verilog and VHDL are used for design.<hr>
+Digital systems are faster, more reliable, and less affected by noise than analog systems.<hr>
+They are widely used in computers, smartphones, and embedded systems.<hr>
+Digital System Design is a fundamental subject in electronics and computer engineering.<br>
+            </p>
+        </div>
     </div>
 </body>
+
 </html>
