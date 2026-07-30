@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-   <link rel="icon" type="image/png" href="me.jpg">
+  <link rel="icon" type="image/png" href="me.jpg">
   <title>AviiLabs</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -61,11 +61,11 @@
     }
 
     .nav-links{
-    display:flex;
-    gap:15px;
-    flex-wrap:wrap;
-    justify-content:flex-end;
-}
+      display:flex;
+      gap:15px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
 
     .nav-links a{
       color:#d0d7e2;
@@ -74,6 +74,41 @@
 
     .nav-links a:hover{
       color:#4ea1ff;
+    }
+
+    /* Mobile Toggle Button */
+    .mobile-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 28px;
+      height: 20px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .mobile-toggle span {
+      display: block;
+      height: 3px;
+      width: 100%;
+      background-color: #ffffff;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    /* Animated Close Icon State */
+    .mobile-toggle.active span:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+
+    .mobile-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .mobile-toggle.active span:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
     }
 
     /* HERO */
@@ -271,7 +306,7 @@
       border-top:1px solid rgba(255,255,255,0.05);
     }
 
-    /* MOBILE */
+    /* MOBILE RESPONSIVENESS */
 
     @media(max-width:900px){
 
@@ -283,8 +318,32 @@
         grid-template-columns:1fr;
       }
 
-      .nav-links{
-        display:none;
+      .mobile-toggle {
+        display: flex;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        max-width: 300px;
+        height: 100vh;
+        background: #0d1322;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 100px 30px 30px;
+        gap: 25px;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+        transition: right 0.3s ease-in-out;
+      }
+
+      .nav-links.active {
+        right: 0;
+      }
+
+      .nav-links a {
+        font-size: 1.1rem;
       }
     }
 
@@ -299,7 +358,13 @@
     <div class="container nav-container">
       <div class="logo">Avinash Kauran | RedKing</div>
 
-      <div class="nav-links">
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-links" id="nav-links">
         <a href="#courses">Courses</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
@@ -500,6 +565,26 @@
       </p>
     </div>
   </footer>
+
+  <!-- JAVASCRIPT FOR MOBILE NAV -->
+
+  <script>
+    const toggleBtn = document.getElementById('mobile-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    toggleBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      toggleBtn.classList.toggle('active');
+    });
+
+    // Close menu when a navigation link is clicked
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        toggleBtn.classList.remove('active');
+      });
+    });
+  </script>
 
 </body>
 </html>
